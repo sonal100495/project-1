@@ -37,8 +37,8 @@ resource "aws_ecs_service" "hello_world_service" {
 
 
  network_configuration {
-   subnets = [subnet-003881cba63e2795f]
-   security_groups = [sg-0b80b497c45782089] 
+   subnets = ["subnet-003881cba63e2795f"]
+   security_groups = ["sg-0b80b497c45782089"] 
    } 
 
 }
