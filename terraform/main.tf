@@ -35,8 +35,4 @@ resource "aws_ecs_service" "hello_world_service" {
   desired_count   = 1
   launch_type     = "FARGATE"
 
-  network_configuration {
-    subnets         = [aws_vpc.default_vpc.default_subnet_id]
-    security_groups = [aws_default_security_group.default_sg.id]
-  }
 }
