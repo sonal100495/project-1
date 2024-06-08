@@ -32,7 +32,7 @@ resource "aws_ecs_service" "hello_world_service_1" {
   name            = "hello-world-service_1"
   cluster         = aws_ecs_cluster.hello_world_cluster_1.id
   task_definition = aws_ecs_task_definition.hello_world_task_1.arn
-  desired_count   = 1
+  desired_count   = 0
   launch_type     = "FARGATE"
 
 
