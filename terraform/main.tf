@@ -16,7 +16,7 @@ resource "aws_ecs_task_definition" "hello_world_task" {
   container_definitions = jsonencode([
     {
       name      = "hello-world"
-      image     = "sonal10/hello-world-nodejs:latest"
+      image     = "sonal10/hello-world-nodejs"
       essential = true
       portMappings = [
         {
