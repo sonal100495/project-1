@@ -20,9 +20,9 @@ jobs:
 
     - name: Build Docker image
       run: |
-        docker build -t sonal10/hello-world-nodejs:latest .
+        docker build -t sonal10/hello-world-nodejs-app:latest .
         echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-        docker push sonal10/hello-world-nodejs:latest
+        docker push sonal10/hello-world-nodejs-app:latest
 
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1
