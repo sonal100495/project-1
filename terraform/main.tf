@@ -2,12 +2,12 @@ provider "aws" {
   region = "us-west-2"
 }
 
-resource "aws_ecs_cluster" "hello_world_cluster" {
-  name = "hello-world-cluster"
+resource "aws_ecs_cluster" "hello_world_cluster_1" {
+  name = "hello-world-cluster_1"
 }
 
-resource "aws_ecs_task_definition" "hello_world_task" {
-  family                = "hello-world-task"
+resource "aws_ecs_task_definition" "hello_world_task_1" {
+  family                = "hello-world-task_1"
   requires_compatibilities = ["FARGATE"]
   network_mode          = "awsvpc"
   cpu                   = "256"
@@ -16,7 +16,7 @@ resource "aws_ecs_task_definition" "hello_world_task" {
   container_definitions = jsonencode([
     {
       name      = "hello-world"
-      image     = "sonal10/hello-world-nodejs:latest"
+      image     = "sonal10/hello-world-nodejs_1:latest"
       essential = true
       portMappings = [
         {
@@ -28,10 +28,10 @@ resource "aws_ecs_task_definition" "hello_world_task" {
   ])
 }
 
-resource "aws_ecs_service" "hello_world_service" {
-  name            = "hello-world-service"
-  cluster         = aws_ecs_cluster.hello_world_cluster.id
-  task_definition = aws_ecs_task_definition.hello_world_task.arn
+resource "aws_ecs_service" "hello_world_service_1" {
+  name            = "hello-world-service_1"
+  cluster         = aws_ecs_cluster.hello_world_cluster_1.id
+  task_definition = aws_ecs_task_definition.hello_world_task_1.arn
   desired_count   = 1
   launch_type     = "FARGATE"
 
